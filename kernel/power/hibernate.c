@@ -85,10 +85,11 @@ void hibernate_release(void)
 
 bool hibernation_available(void)
 {
-	if (of_machine_is_compatible("sipeed,th1520-laptop")) {
-	       // lichee th1520 laptop is not ready for suspend, need more code
+	if (of_machine_is_compatible("sipeed,th1520-laptop") ||
+		of_machine_is_compatible("sipeed,pocket4a")) {
+	       // lichee th1520 laptop/pocket4a is not ready for suspend, need more code
 	       // TODO: fix it
-               printk("lichee th1520 laptop hibernate not ready\n\r");
+               printk("lichee th1520 laptop/pocket hibernate not ready\n\r");
 	       return 0;
         }
 	return nohibernate == 0 && !security_locked_down(LOCKDOWN_HIBERNATION);

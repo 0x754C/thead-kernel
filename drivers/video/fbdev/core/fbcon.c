@@ -987,11 +987,15 @@ static const char *fbcon_startup(void)
 	ops->info = info;
 	info->fbcon_par = ops;
 
-	// lichee th1520 console4a need rotate the framebuffer
+	// lichee th1520 console4a  & pocket4a need rotate the framebuffer
 	// TODO: move it into sep prop
 	if (of_machine_is_compatible("sipeed,console4a") && (initial_rotation == -1)) {
 		initial_rotation = 1;
 		printk("licheeconsol4a fbcon rotate: %d\n\r", initial_rotation);
+	}
+	if (of_machine_is_compatible("sipeed,pocket4a") && (initial_rotation == -1)) {
+		initial_rotation = 1;
+		printk("licheepocket4a fbcon rotate: %d\n\r", initial_rotation);
 	}
 	p->con_rotate = initial_rotation;
 	if (p->con_rotate == -1)

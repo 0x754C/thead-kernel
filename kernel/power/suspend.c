@@ -174,10 +174,11 @@ static bool valid_state(suspend_state_t state)
 
 void __init pm_states_init(void)
 {
-	// lichee th1520 laptop is not ready for suspend, need more code
+	// lichee th1520 laptop/pocket is not ready for suspend, need more code
 	// TODO: fix it
-	if (of_machine_is_compatible("sipeed,th1520-laptop")) {
-		printk("lichee th1520 laptop suspend not ready\n\r");
+	if (of_machine_is_compatible("sipeed,th1520-laptop") ||
+		of_machine_is_compatible("sipeed,pocket4a")) {
+		printk("lichee th1520 laptop/pocket suspend not ready\n\r");
 		return;
         }
 	/* "mem" and "freeze" are always present in /sys/power/state. */
