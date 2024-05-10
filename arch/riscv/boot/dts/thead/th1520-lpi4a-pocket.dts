@@ -21,7 +21,6 @@
 };
 
 &uart3 {
-	pinctrl = <&pinctrl_uart3_pocket>;
 	status = "okay";
 };
 
@@ -36,7 +35,7 @@
 &fan {
         pwms = <&pwm 1 10000000 0>;
         //cooling-levels = <0 64 192 255>;
-        cooling-levels = <255 255 255 255>;
+        cooling-levels = <192 192 192 255>;
 };
 
 &i2c0 {

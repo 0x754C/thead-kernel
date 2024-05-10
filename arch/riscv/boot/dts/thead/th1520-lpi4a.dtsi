@@ -1096,13 +1096,6 @@
 				>;
 			};
 
-			pinctrl_uart3_pocket: uart3_pocket_grp {
-				thead,pins = <
-					FM_UART3_TXD 0x0 0x72
-					FM_UART3_RXD 0x0 0x72
-				>;
-			};
-
 			pinctrl_uart4: uart4grp {
 				thead,pins = <
 					FM_UART4_TXD	0x0	0x72
