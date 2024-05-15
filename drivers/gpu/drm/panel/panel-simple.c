@@ -4572,7 +4572,7 @@ static const struct panel_desc_dsi z14inch_2160x1440_40Hz = {
 
 /* TODO: move timing into device tree */
 static const struct drm_display_mode cmn_5171_1920x1200_40Hz_mode = {
-	.clock          = 102880,
+	.clock          = 127750,
 	.hdisplay       = 1920,
 	.hsync_start    = 1920 + 46, /* hact + hfp */
 	.hsync_end      = 1920 + 46 + 30, /* hact + hfp + hs */

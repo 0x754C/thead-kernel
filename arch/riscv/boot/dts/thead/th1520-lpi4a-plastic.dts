@@ -40,8 +40,7 @@
 &lt8911 {
 	// CMN5171
 	//lontium,pclk = <154000000>; // 60Hz
-	//lontium,pclk = <127750000>; // 50Hz
-	lontium,pclk = <102880000>; // 40Hz
+	lontium,pclk = <127750000>; // 50Hz
 	//lontium,pclk = <757500000>; // 30Hz
 	lontium,hact = <1920>;
 	lontium,vact = <1200>;
@@ -54,7 +53,7 @@
 	lontium,mipi_lane = <2>;
 	lontium,lane_cnt = <2>;
 	lontium,color = <1>; //Color Depth 0:6bit 1:8bit
-	lontium,test = <1>;
+	lontium,test = <0>;
 };
 
 &fan {
@@ -63,5 +62,7 @@
 };
 
 &lcd0_backlight {
+	//pwms = <&pwm 0 50000>;
+	pwms = <&pwm 0 1000000>;
         default-brightness-level = <40>;
 };
