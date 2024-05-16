@@ -56,9 +56,21 @@
 	lontium,test = <0>;
 };
 
+&fan_config0 {
+	temperature = <40000>;
+};
+
+&fan_config1 {
+	temperature = <60000>;
+};
+
+&fan_config2 {
+	temperature = <80000>;
+};
+
 &fan {
-        pwms = <&pwm 1 10000000 0>;
-        cooling-levels = <0 192 220 255>;
+        pwms = <&pwm 1 100000 0>;
+        cooling-levels = <0x10 0x30 0x50 0xFF>;
 };
 
 &lcd0_backlight {
